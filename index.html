@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кемпер Работилница ООД - Ремонт и Паркинг в Бургас</title>
+    <title>CAMPER WORKSHOP / КЕМПЕР РАБОТИЛНИЦА - Бургас</title>
     <style>
         :root {
-            --primary: #1e3a8a;
-            --secondary: #f59e0b;
-            --dark: #1f2937;
-            --light: #f3f4f6;
+            --primary: #ec4899; /* Ярко, модерно розово */
+            --secondary: #f43f5e; /* Наситено розов акцент */
+            --dark: #0f172a; /* Дълбоко тъмносин фон за луксозен контраст */
+            --light: #fdf2f8; /* Много нежен розов оттенък за светъл фон */
         }
         
         * {
@@ -20,19 +20,20 @@
         }
 
         body {
-            color: var(--dark);
+            color: #1e293b;
             line-height: 1.6;
             background-color: #ffffff;
         }
 
         header {
-            background-color: var(--primary);
+            background-color: var(--dark);
             color: white;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2rem;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.2);
+            border-bottom: 3px solid var(--primary);
         }
 
         .nav-container {
@@ -46,77 +47,103 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            color: var(--secondary);
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+        
+        .logo span {
+            color: var(--primary);
         }
 
         .hero {
-            background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(31, 41, 55, 0.8)), url('https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(236, 72, 153, 0.45)), url('https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
             color: white;
-            padding: 6rem 2rem;
+            padding: 8rem 2rem;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 3.2rem;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            font-weight: 800;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
         }
 
         .cta-btn {
             display: inline-block;
-            background-color: var(--secondary);
-            color: var(--dark);
-            padding: 0.8rem 2rem;
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 2.5rem;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 5px;
-            transition: background 0.3s;
-            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
+            font-size: 1.3rem;
+            box-shadow: 0 5px 20px rgba(236, 72, 153, 0.4);
         }
 
         .cta-btn:hover {
-            background-color: #d97706;
+            background-color: var(--secondary);
+            transform: scale(1.05);
+            box-shadow: 0 5px 25px rgba(236, 72, 153, 0.6);
         }
 
         .section {
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: var(--primary);
+            color: var(--dark);
             position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 5px;
+            background: var(--primary);
+            margin: 10px auto 0 auto;
+            border-radius: 10px;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .service-card {
             background: var(--light);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-top: 5px solid var(--primary);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(236, 72, 153, 0.05);
+            border-top: 6px solid var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
         }
 
         .service-card h3 {
-            margin-bottom: 1rem;
-            color: var(--primary);
-            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            font-size: 1.6rem;
         }
 
         .service-card ul {
@@ -124,51 +151,99 @@
         }
 
         .service-card li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            padding-left: 2rem;
             position: relative;
+            font-size: 1.1rem;
         }
 
         .service-card li::before {
-            content: "✓";
+            content: "💗";
             position: absolute;
             left: 0;
-            color: var(--secondary);
-            font-weight: bold;
+            font-size: 0.9rem;
         }
 
-        .contact-info {
-            background-color: var(--light);
-            border-radius: 8px;
-            padding: 2rem;
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             margin-top: 2rem;
         }
 
+        .media-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            background: #fff;
+            border: 2px solid #f3e8ff;
+        }
+
+        .media-item img, .media-item video {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .media-caption {
+            padding: 1rem;
+            font-weight: bold;
+            text-align: center;
+            background: var(--dark);
+            color: white;
+            border-top: 2px solid var(--primary);
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--dark), #1e1e38);
+            color: white;
+            border-radius: 25px;
+            padding: 3rem;
+            margin-top: 2rem;
+            box-shadow: 0 15px 30px rgba(15, 23, 42, 0.25);
+            border-left: 8px solid var(--primary);
+        }
+
         .info-item {
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 0.5rem;
         }
 
         .fb-link {
             display: inline-flex;
             align-items: center;
-            color: #1877f2;
+            background-color: #1877f2;
+            color: white;
             text-decoration: none;
             font-weight: bold;
+            padding: 0.9rem 1.8rem;
+            border-radius: 50px;
             margin-top: 1rem;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 12px rgba(24, 119, 242, 0.3);
+        }
+
+        .fb-link:hover {
+            background-color: #145dbf;
+            transform: scale(1.02);
         }
 
         footer {
             background-color: var(--dark);
-            color: white;
+            color: #94a3b8;
             text-align: center;
-            padding: 1.5rem;
-            margin-top: 4rem;
+            padding: 2.5rem;
+            margin-top: 5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .hero p { font-size: 1.1rem; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.2rem; }
+            .section-title { font-size: 2rem; }
         }
     </style>
 </head>
@@ -176,57 +251,85 @@
 
     <header>
         <div class="nav-container">
-            <div class="logo">🚌 Кемпер Работилница ООД</div>
+            <div class="logo">🚌 CAMPER WORKSHOP / <span>КЕМПЕР РАБОТИЛНИЦА</span></div>
         </div>
     </header>
 
     <section class="hero">
-        <h1>Профессионален ремонт и сигурен паркинг за кемпери и каравани</h1>
-        <p>Вашият дом на колела заслужава експертна грижа. Заповядайте в нашата база в Бургас!</p>
-        <a href="tel:+359898546694" class="cta-btn">📞 Обади се сега</a>
+        <h1>CAMPER WORKSHOP <br>КЕМПЕР РАБОТИЛНИЦА</h1>
+        <p>Вашият дом на колела заслужава най-добрата грижа. Професионален сервиз и паркинг в Бургас!</p>
+        <a href="tel:+359898546694" class="cta-btn">📞 Звънни сега: 0898 546 694</a>
     </section>
 
     <section class="section">
-        <h2 class="section-title">Нашите Услуги</h2>
+        <h2 class="section-title">Нашите Специализирани Услуги</h2>
         <div class="services-grid">
             <div class="service-card">
-                <h3>🔧 Специализиран Сервиз</h3>
+                <h3>🔧 Сервиз и Ремонти</h3>
                 <ul>
                     <li>Ремонт на ходова част и спирачни системи</li>
                     <li>Хидроизолация и отстраняване на течове</li>
                     <li>Монтаж на соларни панели, тенти и аксесоари</li>
-                    <li>Диагностика на газови, водни и ел. инсталации</li>
+                    <li>Инсталации: Газ, Вода и Електричество</li>
                 </ul>
             </div>
             <div class="service-card">
-                <h3>🅿️ Охраняем Паркинг</h3>
+                <h3>🅿️ Сигурен Паркинг</h3>
                 <ul>
-                    <li>Контролиран достъп и сигурност за Вашата машина</li>
-                    <li>Възможност за зареждане с чиста вода</li>
-                    <li>Зона за източване на мръсна вода (мръсен канал)</li>
+                    <li>Денонощна охрана и контролиран достъп</li>
+                    <li>Зареждане с чиста питейна вода</li>
+                    <li>Специализирана зона за източване на мръсна вода</li>
                     <li>Електрическо захранване за всяко място</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section class="section" style="background-color: #fafafa; max-width: 100%;">
-        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
-            <h2 class="section-title">Контакти и Локация</h2>
-            <div class="contact-info">
-                <div class="info-item"><strong>📍 Адрес:</strong> гр. Бургас, кв. Лозово, ул. „Ястребино“ (Пощенски код: 8015)</div>
-                <div class="info-item"><strong>📞 Телефон за връзка:</strong> <a href="tel:+359000000000" style="color: var(--primary); text-decoration: none; font-weight: bold;">[Въведете Вашия телефон тук]</a></div>
-                <div class="info-item"><strong>💼 Фирма:</strong> Кемпер Работилница ООД</div>
+    <section class="section" style="background-color: #fffaf0; max-width: 100%;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+            <h2 class="section-title">Галерия и Работен процес</h2>
+            <div class="media-grid">
                 
-                <a href="https://www.facebook.com/share/1EP1kZczKf/" target="_blank" class="fb-link">
-                    🌐 Последвайте ни във Facebook за актуални проекти и новини
-                </a>
+                <!-- Снимка 1 -->
+                <div class="media-item">
+                    <img src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=500&q=80" alt="Ремонт на кемпер">
+                    <div class="media-caption">Професионален Сервиз</div>
+                </div>
+
+                <!-- Видеоклип -->
+                <div class="media-item">
+                    <video controls muted poster="https://images.unsplash.com/photo-1533518463841-d62e1fc91373?auto=format&fit=crop&w=500&q=80">
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-camper-van-driving-on-a-mountain-road-41584-large.mp4" type="video/mp4">
+                        Браузърът Ви не поддържа видео елементи.
+                    </video>
+                    <div class="media-caption">Видео от базата ни</div>
+                </div>
+
+                <!-- Снимка 2 -->
+                <div class="media-item">
+                    <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=500&q=80" alt="Каравана на паркинг">
+                    <div class="media-caption">Охраняем Паркинг</div>
+                </div>
+
             </div>
         </div>
     </section>
 
+    <section class="section">
+        <h2 class="section-title">Контакти и Локация</h2>
+        <div class="contact-info">
+            <div class="info-item"><strong>📍 Адрес:</strong> гр. Бургас, кв. Лозово, ул. „Ястребино“ (Пощенски код: 8015)</div>
+            <div class="info-item"><strong>📞 Телефон за връзка:</strong> <a href="tel:+359898546694" style="color: var(--primary); text-decoration: none; font-weight: bold;">0898 546 694</a></div>
+            <div class="info-item"><strong>💼 Юридическо лице:</strong> Кемпер Работилница ООД</div>
+            
+            <a href="https://www.facebook.com/share/1EP1kZczKf/" target="_blank" class="fb-link">
+                🔵 Посетете ни във Facebook
+            </a>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2026 Кемпер Работилница ООД. Всички права запазени. | Бургас, кв. Лозово</p>
+        <p>&copy; 2026 CAMPER WORKSHOP / КЕМПЕР РАБОТИЛНИЦА ООД. Всички права запазени. | Бургас, кв. Лозово</p>
     </footer>
 
 </body>
