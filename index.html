@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кемпер Работилница ООД - Ремонт и Паркинг в Бургас</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #f59e0b;
+            --dark: #1f2937;
+            --light: #f3f4f6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(31, 41, 55, 0.8)), url('https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .cta-btn:hover {
+            background-color: #d97706;
+        }
+
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--primary);
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-size: 1.4rem;
+        }
+
+        .service-card ul {
+            list-style-type: none;
+        }
+
+        .service-card li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .contact-info {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-item {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .fb-link {
+            display: inline-flex;
+            align-items: center;
+            color: #1877f2;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">🚌 Кемпер Работилница ООД</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Профессионален ремонт и сигурен паркинг за кемпери и каравани</h1>
+        <p>Вашият дом на колела заслужава експертна грижа. Заповядайте в нашата база в Бургас!</p>
+        <a href="tel:+359898546694" class="cta-btn">📞 Обади се сега</a>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Нашите Услуги</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🔧 Специализиран Сервиз</h3>
+                <ul>
+                    <li>Ремонт на ходова част и спирачни системи</li>
+                    <li>Хидроизолация и отстраняване на течове</li>
+                    <li>Монтаж на соларни панели, тенти и аксесоари</li>
+                    <li>Диагностика на газови, водни и ел. инсталации</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>🅿️ Охраняем Паркинг</h3>
+                <ul>
+                    <li>Контролиран достъп и сигурност за Вашата машина</li>
+                    <li>Възможност за зареждане с чиста вода</li>
+                    <li>Зона за източване на мръсна вода (мръсен канал)</li>
+                    <li>Електрическо захранване за всяко място</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background-color: #fafafa; max-width: 100%;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <h2 class="section-title">Контакти и Локация</h2>
+            <div class="contact-info">
+                <div class="info-item"><strong>📍 Адрес:</strong> гр. Бургас, кв. Лозово, ул. „Ястребино“ (Пощенски код: 8015)</div>
+                <div class="info-item"><strong>📞 Телефон за връзка:</strong> <a href="tel:+359000000000" style="color: var(--primary); text-decoration: none; font-weight: bold;">[Въведете Вашия телефон тук]</a></div>
+                <div class="info-item"><strong>💼 Фирма:</strong> Кемпер Работилница ООД</div>
+                
+                <a href="https://www.facebook.com/share/1EP1kZczKf/" target="_blank" class="fb-link">
+                    🌐 Последвайте ни във Facebook за актуални проекти и новини
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Кемпер Работилница ООД. Всички права запазени. | Бургас, кв. Лозово</p>
+    </footer>
+
+</body>
+</html>
